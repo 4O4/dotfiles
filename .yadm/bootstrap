@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+.local/bin/yadm submodule update --init --recursive
+source ~/.zshrc
