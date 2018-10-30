@@ -15,7 +15,7 @@
     c = commit --verbose
     ca = commit --amend --verbose
     amend = commit --amend --verbose
-    cm = commit -m --verbose
+    cm = commit --verbose -m
     s = status
     ps = push
     pl = pull
