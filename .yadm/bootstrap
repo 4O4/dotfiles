@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
 .local/bin/yadm submodule update --init --recursive
-source ~/.zshrc
+
+ln -s -f .tmux/.tmux.conf
+
+if [ -n "$ZSH_VERSION"  ]; then
+    source ~/.zshrc
+fi;
