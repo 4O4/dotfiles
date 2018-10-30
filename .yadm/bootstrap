@@ -2,6 +2,7 @@
 
 .local/bin/yadm submodule update --init --recursive
 
+find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -s {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
 ln -s -f .tmux/.tmux.conf
 
 if [ -n "$ZSH_VERSION"  ]; then

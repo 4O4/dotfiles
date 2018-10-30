@@ -7,3 +7,21 @@
 [submodule ".tmux_runtime"]
 	path = .tmux_runtime
 	url = https://github.com/gpakosz/.tmux
+[submodule ".oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
+	path = .oh-my-zsh-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".oh-my-zsh-custom/cloned/aphrodite-terminal-theme"]
+	path = .oh-my-zsh-custom/cloned/aphrodite-terminal-theme
+	url = https://github.com/win0err/aphrodite-terminal-theme.git
+[submodule ".oh-my-zsh-custom/cloned/pastel-theme"]
+	path = .oh-my-zsh-custom/cloned/pastel-theme
+	url = https://github.com/iboyperson/pastel.git
+[submodule ".oh-my-zsh-custom/cloned/pure-theme"]
+	path = .oh-my-zsh-custom/cloned/pure-theme
+	url = https://github.com/sindresorhus/pure.git
+[submodule ".oh-my-zsh-custom/cloned/sugar-free-theme"]
+	path = .oh-my-zsh-custom/cloned/sugar-free-theme
+	url = https://github.com/cbrock/sugar-free.git
+[submodule ".oh-my-zsh-custom/cloned/xxf-theme"]
+	path = .oh-my-zsh-custom/cloned/xxf-theme
+	url = https://gist.github.com/18fd7c24360c68bab884.git
