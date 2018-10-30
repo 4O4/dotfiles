@@ -2,6 +2,9 @@
 	name = 4O4
 	email = pk.pawelo@gmail.com
 
+[includeIf "gitdir:~/Projects/FT/"]
+    path = ~/Projects/FT/.gitconfig
+
 [alias]
     co = checkout
     d = diff
