@@ -4,17 +4,19 @@ export PATH=$HOME/.npm-global/bin/:$HOME/.local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/pawkii/.oh-my-zsh"
 
+#ZSH_TMUX_AUTOSTART=true 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="candy"
+ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "candy" "pastel" "sugar-free" "aphrodite" "xxf")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -69,6 +71,8 @@ plugins=(
   thefuck
   transfer
   #vi-mode
+  tmux
+  fancy-ctrl-z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +110,8 @@ export SSH_ASKPASS=ksshaskpass
 
 eval $(keychain --eval --quiet id_rsa ft_dev_rsa github_rsa)
 alias init-socks-tunnel="screen -d -m -S stun socks-tunnel"
+alias init-cors-anywhere="screen -d -m -S corsa cors-anywhere"
 
 eval $(thefuck --alias)
 source /usr/share/nvm/init-nvm.sh
+
