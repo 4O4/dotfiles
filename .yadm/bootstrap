@@ -22,7 +22,7 @@ find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -sf {
 chmod g-w,o-w -R $HOME/.oh-my-zsh-custom
 
 # Symlink base third-party .tmux.conf, customized config is in .tmux.local.conf
-ln -s -f .tmux/.tmux.conf
+ln -s -f .tmux_runtime/.tmux.conf .tmux.conf
 
 # Get Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
