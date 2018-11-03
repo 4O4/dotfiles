@@ -1,11 +1,28 @@
 #!/usr/bin/env bash
 
-.local/bin/yadm submodule update --init --recursive
+cd $HOME
 
-find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -s {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
-ln -s -f .tmux/.tmux.conf
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+# Fetch zsh plugins, zsh themes, vim and tmux config
+yadm submodule update --init --recursive --force
 
-if [ -n "$ZSH_VERSION"  ]; then
-    source ~/.zshrc
+# If oh-my-zsh is installed, apply patch from this pull request:
+# https://github.com/robbyrussell/oh-my-zsh/pull/7374
+# So that custom themes work properly in 'random' mode
+if [[ -d $HOME/.oh-my-zsh ]]; then
+  cd $HOME/.oh-my-zsh
+  wget https://patch-diff.githubusercontent.com/raw/robbyrussell/oh-my-zsh/pull/7374.patch -O /tmp/ohmyzsh-custom-random-theme.patch
+  git apply /tmp/ohmyzsh-custom-random-theme.patch
+  cd $HOME
 fi;
+
+# ZSH themes are cloned to separate `cloned/` dir, so make symlinks in `themes/` 
+find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -sf {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
+
+# Fix permissions of ZSH_CUSTOm dir recursively
+chmod g-w,o-w -R $HOME/.oh-my-zsh-custom
+
+# Symlink base third-party .tmux.conf, customized config is in .tmux.local.conf
+ln -s -f .tmux_runtime/.tmux.conf .tmux.conf
+
+# Get Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm

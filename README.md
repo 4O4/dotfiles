@@ -14,21 +14,23 @@ Learn more about dotfiles in general here: https://dotfiles.github.io/
 mkdir -p $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH && curl -fLo $HOME/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x $HOME/.local/bin/yadm
 ```
 
-2. Get the dotfiles
+2. Install zsh and get Oh My ZSH for best experience on earth
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+3. Get the dotfiles
 
 ```
 yadm clone https://github.com/4O4/dotfiles
 ```
 
-3. Optionally adjust current CLASS in yadm and reload symlinks (learn more [here](https://thelocehiliosan.github.io/yadm/docs/alternates)
+**Allow to run bootstrap script when prompted**. You can rerun it later with `yadm bootstrap` if needed.
+
+4. Optionally adjust current CLASS in yadm and reload symlinks (learn more [here](https://thelocehiliosan.github.io/yadm/docs/alternates)
 
 ```
 yadm config local.class work
 yadm alt
-```
-
-4. Get zsh and Oh My ZSH for best experience on earth
-
-```
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
