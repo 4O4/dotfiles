@@ -2,11 +2,15 @@
 
 cd $HOME
 yadm submodule update --init --recursive
-wget https://patch-diff.githubusercontent.com/raw/robbyrussell/oh-my-zsh/pull/7374.patch -O /tmp/ohmyzsh-custom-random-theme.patch
-cd $HOME/.oh-my-zsh
-git apply /tmp/ohmyzsh-custom-random-theme.patch
 
-cd $HOME
-find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -s {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
+if [[ -d $HOME/.oh-my-zsh ]]; then
+  cd $HOME/.oh-my-zsh
+  wget https://patch-diff.githubusercontent.com/raw/robbyrussell/oh-my-zsh/pull/7374.patch -O /tmp/ohmyzsh-custom-random-theme.patch
+  git apply /tmp/ohmyzsh-custom-random-theme.patch
+  cd $HOME
+  find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -s {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
+  chmod g-w,o-w -R $HOME/.oh-my-zsh-custom
+fi;
+
 ln -s -f .tmux/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
