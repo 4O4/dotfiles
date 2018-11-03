@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-.local/bin/yadm submodule update --init --recursive
+yadm submodule update --init --recursive
 
 find $HOME/.oh-my-zsh-custom/cloned/ -name '*.zsh-theme' -exec bash -c "ln -s {} $HOME/.oh-my-zsh-custom/themes/\$(basename {})" \;
 ln -s -f .tmux/.tmux.conf
