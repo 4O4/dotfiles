@@ -103,3 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias tmuxify="tmux neww && tmux"
+alias zgconf="$EDITOR ~/.zshrc-generic"
+alias zconf="$EDITOR ~/.zshrc"
+alias zrel="source ~/.zshrc"
